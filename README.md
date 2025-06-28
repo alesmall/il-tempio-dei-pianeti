@@ -1,2 +1,6 @@
-# il-tempio-dei-pianeti
-un santuario nascosto tra le stelle. il destino dell'universo è nelle tue mani.
+# Il Tempio dei Pianeti
+_Un santuario nascosto tra le stelle. Il destino dell'universo è nelle tue mani._
+
+---
+
+**progetto per l'esame di MAP**: avventura testuale in Java, con GUI. 
