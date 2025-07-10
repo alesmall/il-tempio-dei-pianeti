@@ -1,13 +1,21 @@
+import GUI.ManagerGUI;
+import backend.DatabaseConnection;
+import backend.RestServer;
+
 /**
  * 
- * the Main class. it's the entry point of the application.
- * 
- * @author alessandra
+ * la classe principale (main class). è l'entry point dell'applicazione.
  * 
  */
 public class IlTempioDeiPianeti {
 
-    public static void main(String[] args) {
-        System.out.println("hello world!");
+    public static void main(final String[] args) {
+            new ManagerGUI();
+            try {
+                new RestServer().startServer();
+                DatabaseConnection.connect();
+            } catch (Exception e) {
+                e.printStackTrace();
+        }
     }
 }

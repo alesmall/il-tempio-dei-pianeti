@@ -58,3 +58,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+## database ##
+src/main/resources/database/il_tempio_dei_pianeti.mv.db
+src/main/resources/database/il_tempio_dei_pianeti.trace.db
