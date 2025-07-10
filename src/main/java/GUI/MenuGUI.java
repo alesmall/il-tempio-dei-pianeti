@@ -199,7 +199,7 @@ public class MenuGUI extends JPanel {
     */
     private void newGameActionPerformed(ActionEvent evt) {
         CardLayout cl = (CardLayout) getParent().getLayout();
-        new Thread(() -> Mixer.changeRoomMusic("ProgressBar")).start(); // TODO a volte si bugga
+        Mixer.playEffect("progressbar");
         cl.show(getParent(), "ProgressBarGUI");
         
         ProgressBarGUI progressBarPanel = findProgressBarPanel();
@@ -228,7 +228,7 @@ public class MenuGUI extends JPanel {
             boolean loaded = gameManager.loadGame();
             if (loaded) {
                 CardLayout cl = (CardLayout) getParent().getLayout();
-                new Thread(() -> Mixer.changeRoomMusic("ProgressBar")).start(); 
+                Mixer.playEffect("progressbar");
                 cl.show(getParent(), "ProgressBarGUI");
 
                 ProgressBarGUI progressBarPanel = findProgressBarPanel();

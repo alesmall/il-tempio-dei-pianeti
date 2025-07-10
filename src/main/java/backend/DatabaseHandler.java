@@ -94,6 +94,7 @@ public class DatabaseHandler extends HttpHandler {
 
                     html {
                         scroll-behavior: smooth;
+                        scroll-padding-top: 80px;
                     }
 
                     body {
@@ -178,6 +179,14 @@ public class DatabaseHandler extends HttpHandler {
                         text-align: center;
                         margin: 2rem 0 1rem 0;
                         font-size: 1.5rem;
+                    }
+
+                    h4 {
+                        font-family: 'Exo 2', 'Segoe UI', 'Trebuchet MS', sans-serif;
+                        color: #f0f8ff;
+                        text-align: center;
+                        margin: 1rem 0 0.5rem 0;
+                        font-size: 1.1rem;
                     }
 
                     p {
@@ -282,11 +291,12 @@ public class DatabaseHandler extends HttpHandler {
                             <h2>Manuale dell'Esploratore 🎮</h2>
                             <p>Per muoverti e interagire nel Tempio dei Pianeti, usa i seguenti comandi testuali:</p>
                             <h3>Comandi di Movimento</h3>
-                            <p>
-                                - <b>nord</b> / <b>N</b> / <b>avanti</b> <br>
-                                - <b>sud</b> / <b>S</b> / <b>indietro</b> <br>
-                                - <b>est</b> / <b>E</b> / <b>destra</b> <br>
-                                - <b>ovest</b> / <b>O</b> / <b>sinistra</b> </p>
+                            <p style="text-align: center;">
+                                <span style="display:inline-block; width: 11em;"> ↑ <b>nord</b> / <b>N</b> </span>
+                                <span style="display:inline-block; width: 11em;"> ↓ <b>sud</b> / <b>S</b> </span>
+                                <span style="display:inline-block; width: 11em;"> → <b>est</b> / <b>E</b> </span>
+                                <span style="display:inline-block; width: 11em;"> ← <b>ovest</b> / <b>O</b> </span>
+                            </p>
                             <h3>Comandi di Gioco</h3>
                             <p>
                                 - <b>inventario</b>: mostra gli oggetti nell'inventario.<br>
@@ -298,6 +308,13 @@ public class DatabaseHandler extends HttpHandler {
                                 - <b>usa [oggetto]</b>: utilizza un oggetto.<br>
                                 - <b>usa [oggetto1] [oggetto2]</b>: usa il primo oggetto sul secondo oggetto.<br>
                                 - <b>unisci [oggetto1] [oggetto2]</b>: unisce due oggetti per crearne uno nuovo.
+                            </p>
+                            <h4>Note sugli Oggetti Speciali:</h4>
+                            <p>
+                                Nel Tempio dei Pianeti, alcune reliquie hanno nomi particolari.
+                                Ogni <b>lettera</b> ritrovata è identificata dal corpo celeste a cui appartiene, e si presenta con il nome <code><b>LetteraNomeCorpoCeleste</b></code>, come ad esempio <code>LetteraSole</code> o <code>LetteraTerra</code>.
+                                Allo stesso modo, ogni <b>cristallo</b> è detto <code><b>CristalloNomeCorpoCeleste</b></code>, come <code>CristalloSaturno</code> o <code>CristalloGiove</code>.
+                                Ricorda di usare questi nomi esatti quando interagisci con gli oggetti.
                             </p>
                         </div>
                     </section>

@@ -10,13 +10,13 @@ import static GUI.MenuGUI.musicButtonSetTextMenu;
 import static GUI.CreditsGUI.musicButtonSetTextCredits;
 
 /**
- * classe che gestisce la musica. TODO suono quando combino cristallo e bracciale? su un nuovo thread
+ * classe che gestisce la musica. 
  */
 public class Mixer extends Thread {
 
     private static Clip[] clips;
     private static int currentClip;
-    private static boolean running = false;
+    private static boolean running = true;
     private static HashMap<String, Integer> roomToClipIndex;
     private static Mixer instance;
 
@@ -24,11 +24,9 @@ public class Mixer extends Thread {
      * costruttore della classe Mixer.
      */
     private Mixer() { 
-        clips = new Clip[16];
+        clips = new Clip[11];
         // menu
         loadClip(0, "src/main/resources/audio/menu.wav");
-        // progress bar
-        loadClip(11, "src/main/resources/audio/progressbar.wav");
         // sole
         loadClip(1, "src/main/resources/audio/sole.wav");
         // ovest
@@ -48,7 +46,6 @@ public class Mixer extends Thread {
         roomToClipIndex = new HashMap<>();
 
         roomToClipIndex.put("Menu", 0);
-        roomToClipIndex.put("ProgressBar", 11);
 
         roomToClipIndex.put("Sole", 1);
 
@@ -90,6 +87,47 @@ public class Mixer extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * riproduce un effetto sonoro da file, senza interrompere la musica di sottofondo.
+     *
+     * @param effect il nome dell'effetto
+     */
+    public static void playEffect(String effect) {
+        new Thread(() -> {
+            try {
+                File file = null;
+                if (effect.equals("binding")) {
+                    file = new File("src/main/resources/audio/binding.wav");
+                } else if (effect.equals("progressbar")) {
+                    file = new File("src/main/resources/audio/progressbar.wav");
+                } else if (effect.equals("leaving")) {
+                    file = new File("src/main/resources/audio/leaving.wav");
+                }
+                if (file == null || !file.exists()) {
+                    System.err.println("effetto sonoro non trovato: " + effect);
+                    return;
+                }
+                AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+                Clip sfx = AudioSystem.getClip();
+                sfx.open(audioStream);
+                if (running) {
+                    if (effect.equals("binding")) {
+                        sfx.start();
+                        sfx.loop(0);
+                    } else if (effect.equals("progressbar")) {
+                        sfx.start();
+                        sfx.loop(2);
+                    } else if (effect.equals("leaving")) {
+                        sfx.start();
+                        sfx.loop(6);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     /**
@@ -178,10 +216,7 @@ public class Mixer extends Thread {
             if (clips[currentClip] != null) {
                 clips[currentClip].stop();
             }
-            if (i == 11) {
-                clips[i].start();
-                clips[i].loop(2);
-            } else if (clips[i] != null) {
+            if (clips[i] != null) {
                 clips[i].start();
                 clips[i].loop(Clip.LOOP_CONTINUOUSLY);
             }

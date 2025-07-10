@@ -2,6 +2,7 @@ package gameplay;
 
 import entity.Item;
 import entity.Room;
+import util.Mixer;
 import entity.Game;
 import GUI.GameGUI;
 import GUI.WordleGUI;
@@ -178,21 +179,25 @@ public class InteractionManager {
         }
         if (i1.hasName("BraccialeVuoto") && i2.hasName("Nucleo")) {
             UserInputFlow.Event = 7; // oblio totale
+            Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "OblioTotale");
             return true;
         } else if (i1.hasName("BraccialeStellare") && i2.hasName("Nucleo")) {
             UserInputFlow.Event = 9; // rinascita stellare
+            Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "RinascitaStellare");
             return true;
         } else if (i1.hasName("BraccialeLunare") && i2.hasName("Nucleo")) {
             UserInputFlow.Event = 10; // risveglio cosmico
+            Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "RisveglioCosmico");
             return true;
         } else if (i1.nameContains("Bracciale") && i2.hasName("Nucleo")) {
             UserInputFlow.Event = 8; // parziale salvezza
+            Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "ParzialeSalvezza");
             return true;
@@ -226,6 +231,7 @@ public class InteractionManager {
         }
 
         if (isItemUpgrade(i1,i2,"BraccialeVuoto")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeLucente"));
@@ -233,6 +239,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeLucente")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeIntarsiato"));
@@ -240,6 +247,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeIntarsiato")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeArmonico"));
@@ -247,6 +255,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeArmonico")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeRisonante"));
@@ -254,6 +263,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeRisonante")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeIncantato"));
@@ -261,6 +271,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeIncantato")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeSplendente"));
@@ -268,6 +279,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeSplendente")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeCeleste"));
@@ -275,6 +287,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeCeleste")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeStellare"));
@@ -283,6 +296,7 @@ public class InteractionManager {
             return true;
         }
         if (isItemUpgrade(i1,i2,"BraccialeStellare")) {
+            Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
             game.addInventory((Item) gameManager.getItemFromName("BraccialeLunare"));

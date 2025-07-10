@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.glassfish.grizzly</groupId>
             <artifactId>grizzly-http-server</artifactId>
-            <version>4.0.2</version> <!-- Usa una versione recente e stabile -->
+            <version>4.0.2</version>
         </dependency>
         <!-- gson permette la serializzazione e deserializzazione di oggetti Java in JSON. -->
         <dependency>

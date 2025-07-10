@@ -48,7 +48,7 @@ public class GameGUI extends JPanel {
     private static final Color COLORE_SFONDO_TOOLBAR = new Color(30, 50, 110);     
     private static final Color COLORE_SFONDO_TOOLBAR_HOVER = new Color(35, 50, 105); 
     private static final Font FONT_TESTO_GIOCO = new Font("Dialog", Font.PLAIN, 13);
-    private static final Font FONT_INVENTARIO = new Font("DialogInput", Font.PLAIN, 15);
+    private static final Font FONT_INVENTARIO = new Font("DialogInput", Font.PLAIN, 15); // TODO forse meglio dialog?
     private static final Font FONT_TOOLBAR = new Font("Dialog", Font.BOLD, 15);
 
 
@@ -113,7 +113,7 @@ public class GameGUI extends JPanel {
         JButton helpButton = createToolBarButton(" Guida ", "mostra la guida dei comandi");
         helpButton.addActionListener(this::helpButtonActionPerformed);
         
-        musicButton = createToolBarButton(Mixer.isRunning() ? "🔊" : "🔇", "attiva o disattiva la musica"); // TODO a volte si bugga
+        musicButton = createToolBarButton(Mixer.isRunning() ? "🔊" : "🔇", "attiva o disattiva la musica");
         musicButton.addActionListener(this::musicButtonActionPerformed);
         musicButton.setPreferredSize(new Dimension(55, 38)); // Dimensione leggermente più grande
         
@@ -241,6 +241,8 @@ public class GameGUI extends JPanel {
 
         JScrollPane scrollPaneInventory = new JScrollPane(inventoryTextArea);
         scrollPaneInventory.getViewport().setOpaque(true);
+        scrollPaneInventory.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+        scrollPaneInventory.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPaneInventory.setBorder(BorderFactory.createLineBorder(COLORE_BORDO_SCURO, 2));
         scrollPaneInventory.getViewport().setBackground(COLORE_PANNELLI_TESTO);
         scrollPaneInventory.setPreferredSize(new Dimension(0, 218)); 

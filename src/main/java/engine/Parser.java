@@ -59,6 +59,9 @@ public class Parser {
      * @return un oggetto ParsedCommand con il risultato del parsing
      */
     public ParsedCommand parse(String input) {
+        Item item1 = null;
+        Item item2 = null;
+
         if (input == null || input.trim().isEmpty()) {
             return new ParsedCommand(null, null, null);
         }
@@ -79,8 +82,20 @@ public class Parser {
             return new ParsedCommand(null, null, null);
         }
 
-        Item item1 = (words.size() > 1) ? findItem(words.get(1)) : null;
-        Item item2 = (words.size() > 2) ? findItem(words.get(2)) : null;
+        if (words.size() > 1) {
+            if (findItem(words.get(1)) != null) {
+                item1 = findItem(words.get(1));
+            } else {
+                return new ParsedCommand(null, null, null); // se c'è una parola dopo il comando ma quella parola non è un oggetto valido, tutto il comando diventa null
+            }
+        }
+        if (words.size() > 2) {
+            if (findItem(words.get(1)) != null) {
+                item2 = findItem(words.get(2));
+            } else {
+                return new ParsedCommand(null, null, null);
+            }
+        }
 
         return new ParsedCommand(foundCommand.getCommandType(), item1, item2);
     }

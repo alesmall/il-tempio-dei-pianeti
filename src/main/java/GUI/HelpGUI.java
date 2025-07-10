@@ -42,8 +42,8 @@ public class HelpGUI extends JFrame {
      */
     private void initComponents() {
         // impostazioni della finestra (JFrame) 
-        setTitle("Guida dell'Esploratore");
-        setPreferredSize(new Dimension(550, 450));
+        setTitle("Manuale dell'Esploratore");
+        setPreferredSize(new Dimension(550, 455));
         setResizable(false);
         getContentPane().setBackground(COLORE_SFONDO);
         setIconImage(new ImageIcon("src/main/resources/img/icon.png").getImage());
@@ -56,7 +56,7 @@ public class HelpGUI extends JFrame {
                     <style type="text/css">
                         body { font-family: 'Dialog', 'Helvetica', sans-serif; font-size: 13pt; color: rgb(240, 248, 255); }
                         p { margin: 5px 0; }
-                        h3 { color: rgb(0, 246, 255); margin-top: 15px; font-size: 15pt;}
+                        h3 { color: rgb(0, 246, 255); margin-top: 10px; margin-bottom: 0px; font-size: 15pt;}
                         b { color: rgb(142, 223, 223); }
                     </style>
                 </head>
@@ -65,10 +65,10 @@ public class HelpGUI extends JFrame {
                     
                     <h3>Comandi di Movimento:</h3>
                     <p>
-                        - <b>nord</b> / <b>N</b> / <b>avanti</b> <br>
-                        - <b>sud</b> / <b>S</b> / <b>indietro</b> <br>
-                        - <b>est</b> / <b>E</b> / <b>destra</b> <br>
-                        - <b>ovest</b> / <b>O</b> / <b>sinistra</b>
+                        ↑ <b>nord</b> / <b>N</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ↓ <b>sud</b> / <b>S</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        → <b>est</b> / <b>E</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ← <b>ovest</b> / <b>O</b> <br>
                     </p>
 
                     <h3>Comandi di Gioco:</h3>
@@ -82,6 +82,12 @@ public class HelpGUI extends JFrame {
                         - <b>usa [oggetto]</b>: utilizza un oggetto.<br>
                         - <b>usa [oggetto1] [oggetto2]</b>: usa il primo oggetto sul secondo.<br>
                         - <b>unisci [oggetto1] [oggetto2]</b>: unisce due oggetti per crearne uno nuovo.
+                    </p>
+                    <p>
+                        <b><i>Note sugli Oggetti Speciali:</i></b> nel Tempio dei Pianeti, alcune reliquie hanno nomi particolari.
+                        Ogni <b>lettera</b> ritrovata è identificata dal corpo celeste a cui appartiene, e si presenta con il nome <code><b>LetteraNomeCorpoCeleste</b></code>, come ad esempio <code>LetteraSole</code> o <code>LetteraTerra</code>.
+                        Allo stesso modo, ogni <b>cristallo</b> è detto <code><b>CristalloNomeCorpoCeleste</b></code>, come <code>CristalloSaturno</code> o <code>CristalloGiove</code>.<br>
+                        Ricorda di usare questi nomi esatti quando interagisci con gli oggetti.
                     </p>
                 </body>
             </html>
