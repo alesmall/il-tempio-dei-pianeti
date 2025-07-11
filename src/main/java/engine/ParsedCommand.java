@@ -74,25 +74,11 @@ public class ParsedCommand {
      *
      * @return l'hashcode
      */
-    @Override // TODO: hashcode da rivedere
+    @Override 
     public int hashCode() {
         int result = command != null ? command.hashCode() : 0;
         result = 31 * result + (item1 != null ? item1.hashCode() : 0);
         result = 31 * result + (item2 != null ? item2.hashCode() : 0);
         return result;
     }
-
-    /** TODO: alternativa
-        @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ParserOutput that = (ParserOutput) o;
-        return command == that.command && Objects.equals(item1, that.item1) && Objects.equals(item2, that.item2);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(command, item1, item2);
-    } */
 }

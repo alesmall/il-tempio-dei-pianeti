@@ -1071,7 +1071,9 @@
                      "SpecchioFrammento",
                      "SpecchioFrammentato",
                      "SpecchioRotto",
-                     "SpecchioRottoFrammento"
+                     "SpecchioRottoFrammento",
+                     "Frammento",
+                     "FrammentoDiSpecchio"
                   ]
                },
                {
@@ -1109,7 +1111,9 @@
                      "SpecchioFrammento",
                      "SpecchioFrammentato",
                      "SpecchioRotto",
-                     "SpecchioRottoFrammento"
+                     "SpecchioRottoFrammento",
+                     "Frammento",
+                     "FrammentoDiSpecchio"
                   ]
                },
                {

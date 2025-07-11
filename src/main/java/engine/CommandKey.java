@@ -44,7 +44,7 @@ public class CommandKey {
      *
      * @return l'hashcode dell'oggetto
      */
-    @Override // TODO: hashcode da rivedere
+    @Override 
     public int hashCode() {
         int result = command != null ? command.hashCode() : 0;
         result = 31 * result + args;

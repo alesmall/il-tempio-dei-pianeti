@@ -33,9 +33,10 @@
         <exec.mainClass>IlTempioDeiPianeti</exec.mainClass>
     </properties>
 
+    <!-- plugin disattivati
     <build>
         <plugins>
-            <!-- crea un singolo JAR con tutte le dipendenze TODO togliere?? -->
+            <!- crea un singolo JAR con tutte le dipendenze ->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.7.1</version>
@@ -59,7 +60,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- genera la javadoc TODO serve?? ->
+            <!- genera la javadoc ->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -72,8 +73,9 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin> -->
+            </plugin> 
         </plugins>
     </build>
+    -->
 
 </project>

@@ -69,7 +69,6 @@ public class Converter {
             // scrivere il file json
             Files.write(savePath, json.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
-            // TODO: oppure throw new RuntimeException(e);
             throw new UncheckedIOException("impossibile salvare il file di gioco.", e);
         }
     }
@@ -106,7 +105,6 @@ public class Converter {
             Files.createDirectories(savePath.getParent());
             Files.write(savePath, json.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
-            // TODO: oppure throw new RuntimeException(e);
             throw new UncheckedIOException("impossibile salvare il file degli oggetti.", e);
         }
     }
@@ -174,8 +172,8 @@ public class Converter {
                     }
                 }
             } else {
-                // potrebbe essere ok non avere un file di items aggiuntivi TODO: verificare se è un caso accettabile, oppure return null
-                // se il file non esiste, semplicemente continuiamo
+                return null;
+                // se il file degli oggetti non esiste, non continuiamo. deve sempre esistere, al massimo sarà vuoto!!
             }
             
             return allItems;

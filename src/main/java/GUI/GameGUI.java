@@ -437,11 +437,6 @@ public class GameGUI extends JPanel {
         if (cardLayout != null && imagePanel != null) {
             Mixer.changeRoomMusic(panelName);
             cardLayout.show(imagePanel, panelName);
-            /* TODO potrebbe servire questo timer? sec me no
-             * Timer timerImagePanel = new Timer(600, e -> cardLayout.show(imagePanel, panelName));
-                timerImagePanel.setRepeats(false);
-                timerImagePanel.start();
-             */
         }
     }
     

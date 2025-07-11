@@ -47,7 +47,6 @@ public class Parser {
                 words.add(line.trim().toLowerCase());
             }
         } catch (IOException e) {
-            // TODO: oppure throw new RuntimeException(e);
             System.err.println("errore durante il caricamento delle stop words: " + e.getMessage());
         }
         return Collections.unmodifiableSet(words);
