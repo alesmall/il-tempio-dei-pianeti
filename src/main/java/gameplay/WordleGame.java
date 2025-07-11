@@ -67,7 +67,7 @@ public class WordleGame {
     
     // costanti e stato del gioco
     private static final int MAX_LETTERS = 5;
-    private static final int MAX_ATTEMPTS = 6;
+    private static final int MAX_ATTEMPTS = 5;
     
     private int currentAttempt = 0;
     private String wordToGuess;

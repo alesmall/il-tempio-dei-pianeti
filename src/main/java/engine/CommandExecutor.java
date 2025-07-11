@@ -60,7 +60,7 @@ public class CommandExecutor {
                 game.setCurrentRoom(corridor.getArrivingRoom());
                 DatabaseConnection.printFromDB("0", game.getCurrentRoom().getName(), game.getCurrentRoom().getState(), "0", "0"); 
             } else if (corridor != null && corridor.isLocked()) {
-                OutputDisplayManager.displayText("> Il corridoio verso " + direction + " è bloccato! Riprova quando avrai il bracciale completo..."); 
+                OutputDisplayManager.displayText("> Il corridoio verso " + direction + " è bloccato! Forse un certo bracciale sarà la chiave per sbloccarlo ..."); 
             } else {
                 OutputDisplayManager.displayText("> Ahia, è un muro quello! Non c'è un corridoio verso " + direction + "."); 
             }

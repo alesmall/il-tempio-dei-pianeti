@@ -99,11 +99,11 @@ public class UserInputFlow {
      */
     private static void nicknameFlow(final String text) {
         if (!isNameConfirmed) {
-            OutputDisplayManager.displayText("> È questo il nome che vuoi incidere nell'universo? (S/N)");
+            OutputDisplayManager.displayText("> È questo il nome che vuoi incidere nell'universo? (si/no)");
             Game.getInstance().setNickname(text);
             isNameConfirmed = true;
         } else {
-            if (text.equalsIgnoreCase("S")) {
+            if (text.equalsIgnoreCase("si") || text.equalsIgnoreCase("s") || text.equalsIgnoreCase("y")) {
                 OutputDisplayManager.displayText("> Perfetto! Il cosmo ti stava aspettando, " + Game.getInstance().getNickname() + ".");
                 OutputDisplayManager.displayText("> Il tuo cammino tra i pianeti può cominciare. Guardati intorno: anche il silenzio nasconde segreti.");
                 Event = 0;
@@ -197,7 +197,7 @@ public class UserInputFlow {
      */
     private static void secretFlow(final String text) {
         String upText = text.toUpperCase();
-        String secret = "IL BRACCIALE DEL VIANDANTE RISVEGLIA L''ECO DELLA LUCE DIMENTICATA";
+        String secret = "IL BRACCIALE DEL VIANDANTE RISVEGLIA L'ECO DELLA LUCE DIMENTICATA";
 
         if (upText.equals(secret)) {
             DatabaseConnection.printFromDB("osserva", "Luna", "correct", "0", "0");

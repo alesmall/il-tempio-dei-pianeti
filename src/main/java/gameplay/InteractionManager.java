@@ -49,7 +49,7 @@ public class InteractionManager {
                 || game.getCurrentRoom().getState().equals("wrong"))) {
             i.getDescription(game.getCurrentRoom());
             OutputDisplayManager.displayText("> “_ _     _ _ _ _ _ _ _ _ _     _ _ _     _ _ _ _ _ _ _ _ _");
-            OutputDisplayManager.displayText("_ _ _ _ _ _ _ _ _     _' _ _ _     _ _ _ _ _");
+            OutputDisplayManager.displayText("_ _ _ _ _ _ _ _ _     L' _ _ _     _ _ _ _ _");
             OutputDisplayManager.displayText("_ _ _ _     _ _ _ _ _ _ _ _ _ _ _”");
             OutputDisplayManager.displayText("(inserisci l'intera frase, senza virgolette e senza punto finale)");
             UserInputFlow.Event = 6; // messaggio segreto
@@ -112,8 +112,12 @@ public class InteractionManager {
             game.setRoomState(game.getCurrentRoom().getName(), "done");
             return true;
         }
-        if (i.getName().equals("BraccialeVuoto")) { // quando si prende il bracciale, la stanza diventa done!!
+        if (i.getName().equals("BraccialeVuoto")) { // quando si prende il bracciale, la stanza diventa done!! il gioco può iniziare
             game.setRoomState("Sole", "done");
+            game.unlockCorridor("Sole", "Terra");
+            game.unlockCorridor("Sole", "StanzaGSN");
+            game.unlockCorridor("Sole", "StanzaMU");
+            game.unlockCorridor("Sole", "StanzaMV");
             return true;
         }
         return false;

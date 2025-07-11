@@ -75,7 +75,7 @@
             ]
          },
          "direction":"NORD",
-         "locked":false,
+         "locked":true,
          "arrivingRoom":{
             "name":"StanzaMU",
             "currentState":"start",
@@ -393,7 +393,7 @@
             ]
          },
          "direction":"SUD",
-         "locked":false,
+         "locked":true,
          "arrivingRoom":{
             "name":"StanzaMV",
             "currentState":"start",
@@ -733,7 +733,7 @@
             ]
          },
          "direction":"OVEST",
-         "locked":false,
+         "locked":true,
          "arrivingRoom":{
             "name":"StanzaGSN",
             "currentState":"start",
@@ -1363,7 +1363,7 @@
             ]
          },
          "direction":"EST",
-         "locked":false,
+         "locked":true,
          "arrivingRoom":{
             "name":"Terra",
             "currentState":"start",
