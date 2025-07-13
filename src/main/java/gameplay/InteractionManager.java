@@ -29,7 +29,7 @@ public class InteractionManager {
     /**
      * le (eventuali) azioni da eseguire quando il giocatore osserva un oggetto.
      *
-     * @param a l'oggetto da osservare
+     * @param i l'oggetto da osservare
      * @return true se l'osserva prevede azioni specifiche aggiuntive, false altrimenti
      */
     public boolean executeLook(Item i) { 
@@ -37,7 +37,7 @@ public class InteractionManager {
                 && game.getCurrentRoom().getName().equals("Terra") && (game.getCurrentRoom().getState().equals("start")
                 || game.getCurrentRoom().getState().equals("wrong"))) {
             i.getDescription(game.getCurrentRoom());
-            UserInputFlow.Event = 4; // impiccato
+            UserInputFlow.event = 4; // impiccato
             UserInputFlow.startHangmanGame();
             OutputDisplayManager.displayText("> “_ _ _     _ _ _ _ _ _     _ _ _ _ _     _ _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _”");
             OutputDisplayManager.displayText("(puoi indovinare una lettera per volta o l'intera frase, senza virgolette e senza punto finale)");
@@ -52,7 +52,7 @@ public class InteractionManager {
             OutputDisplayManager.displayText("_ _ _ _ _ _ _ _ _     L' _ _ _     _ _ _ _ _");
             OutputDisplayManager.displayText("_ _ _ _     _ _ _ _ _ _ _ _ _ _ _”");
             OutputDisplayManager.displayText("(inserisci l'intera frase, senza virgolette e senza punto finale)");
-            UserInputFlow.Event = 6; // messaggio segreto
+            UserInputFlow.event = 6; // messaggio segreto
             return true;
         }
         
@@ -81,20 +81,19 @@ public class InteractionManager {
      * le (eventuali) azioni da eseguire quando il giocatore osserva una stanza.
      *
      * @param room la stanza da osservare
-     * @return true se l'osservazione prevede azioni specifiche aggiuntive, false altrimenti
      */
     public void executeRoomLook(Room room) { 
         if (room.getName().equals("Urano") && (room.getState().equals("start") || room.getState().equals("wrong"))) {
-            UserInputFlow.Event = 2; // per il trivia game 
+            UserInputFlow.event = 2; // per il trivia game 
             TriviaGame triviaGame = TriviaGame.getInstance();
             triviaGame.getNewQuestion();
         }
         if (room.getName().equals("Mercurio") && (room.getState().equals("start") || room.getState().equals("wrong"))) {
             OutputDisplayManager.displayText("> Una figura maestosa domina il cielo: tre stelle perfettamente allineate formano la cintura di un antico cacciatore, con la spada al fianco e il braccio alzato verso le stelle. Chi è? (inserisci solo il nome)");
-            UserInputFlow.Event = 3; // per il gioco della costellazione 
+            UserInputFlow.event = 3; // per il gioco della costellazione 
         }
         if (room.getName().equals("Nettuno") && (room.getState().equals("start") || room.getState().equals("wrong"))) { 
-            UserInputFlow.Event = 5; // per il wordle 
+            UserInputFlow.event = 5; // per il wordle 
             GameGUI.setImagePanel("Wordle");
             WordleGUI wordlePanel = GameGUI.getWordle();
             if (wordlePanel != null) wordlePanel.startNewGameSession(); 
@@ -189,25 +188,25 @@ public class InteractionManager {
             return true;
         }
         if (i1.hasName("BraccialeVuoto") && i2.hasName("Nucleo")) {
-            UserInputFlow.Event = 7; // oblio totale
+            UserInputFlow.event = 7; // oblio totale
             Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "OblioTotale");
             return true;
         } else if (i1.hasName("BraccialeStellare") && i2.hasName("Nucleo")) {
-            UserInputFlow.Event = 9; // rinascita stellare
+            UserInputFlow.event = 9; // rinascita stellare
             Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "RinascitaStellare");
             return true;
         } else if (i1.hasName("BraccialeLunare") && i2.hasName("Nucleo")) {
-            UserInputFlow.Event = 10; // risveglio cosmico
+            UserInputFlow.event = 10; // risveglio cosmico
             Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "RisveglioCosmico");
             return true;
         } else if (i1.nameContains("Bracciale") && i2.hasName("Nucleo")) {
-            UserInputFlow.Event = 8; // parziale salvezza
+            UserInputFlow.event = 8; // parziale salvezza
             Mixer.playEffect("leaving");
             game.removeInventory(i1);
             game.setRoomState("Sole", "ParzialeSalvezza");

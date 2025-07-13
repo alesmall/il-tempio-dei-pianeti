@@ -19,7 +19,9 @@ import java.net.URL;
  */
 public class WordleGame {
 
-    // enumerazioni pubbliche per una comunicazione chiara dello stato
+    /**
+     * enumerazioni pubbliche per una comunicazione chiara dello stato
+    */ 
     public enum GameState { IN_PROGRESS, VICTORY, DEFEAT }
     
     /**
@@ -41,7 +43,12 @@ public class WordleGame {
          */
         LetterState(Color color) { this.color = color; } 
         
-        public Color getColor() { return color; } // metodo getter, restituisce il colore associato a questo stato
+        /**
+         * metodo getter, restituisce il colore associato a questo stato
+         * 
+         * @return il colore associato allo stato
+         */
+        public Color getColor() { return color; }
     }
     
     /**
@@ -50,8 +57,15 @@ public class WordleGame {
      * e la sua rappresentazione visiva (WordleGUI).
      */
     public static class GuessResult {
-        public final GameState gameState; // lo stato generale del gioco dopo questo tentativo
-        public final LetterState[] letterStates; // un array che descrive lo stato di ogni singola lettera del tentativo
+        /**
+         * lo stato generale del gioco dopo questo tentativo
+         */
+        public final GameState gameState;
+
+        /**
+         * un array che descrive lo stato di ogni singola lettera del tentativo
+         */
+        public final LetterState[] letterStates;
         
         /**
          * costruttore per creare un nuovo risultato.
@@ -197,7 +211,7 @@ public class WordleGame {
         
         Game game = Game.getInstance();
         game.setRoomState("Nettuno", "correct");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
         GameGUI.setImagePanel(game.getCurrentRoom().getName());
         
         GameManager gameManager = new GameManager();
@@ -217,7 +231,7 @@ public class WordleGame {
                                              
         Game game = Game.getInstance();
         game.setRoomState("Nettuno", "wrong");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
         GameGUI.setImagePanel(game.getCurrentRoom().getName());
     }
     

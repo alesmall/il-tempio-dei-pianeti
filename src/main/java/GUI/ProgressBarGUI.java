@@ -36,7 +36,10 @@ public class ProgressBarGUI extends JPanel {
 
     private JProgressBar progressBar;
     private JLabel progressBarLabel;
-    private final PropertyChangeSupport support; // supporto per i cambiamenti di proprietà, usato per segnalare il completamento del caricamento
+    /**
+     * supporto per i cambiamenti di proprietà, usato per segnalare il completamento del caricamento
+     */
+    private final PropertyChangeSupport support;
     private final Image background;
 
     /**

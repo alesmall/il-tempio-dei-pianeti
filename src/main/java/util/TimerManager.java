@@ -50,6 +50,8 @@ public class TimerManager {
 
     /**
      * avvia il timer.
+     * 
+     * @param time il tempo iniziale del timer, 00:00:00 se si sta creando una nuova partita
      */
     public void startTimer(final String time) {
         running = true;

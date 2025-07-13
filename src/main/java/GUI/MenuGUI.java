@@ -47,14 +47,14 @@ public class MenuGUI extends JPanel {
     private static final Font FONT_PULSANTI_ICONA = new Font("Dialog", Font.BOLD, 25);
     
     private static JButton soundButton;
-    private final Image immagineSfondo;
+    private final Image backgroundImage;
     private final GameManager gameManager = new GameManager();
 
     /**
      * costruttore della classe.
      */
     public MenuGUI() {
-        this.immagineSfondo = new ImageIcon("src/main/resources/img/menuBackground.png").getImage();
+        this.backgroundImage = new ImageIcon("src/main/resources/img/menuBackground.png").getImage();
         initComponents();
     }
 
@@ -185,8 +185,8 @@ public class MenuGUI extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (immagineSfondo != null) {
-            g.drawImage(immagineSfondo, 0, 0, getWidth(), getHeight(), this);
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }
     }
 

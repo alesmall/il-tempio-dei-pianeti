@@ -1,6 +1,5 @@
 package entity;
 
-
 import util.Converter;
 import java.util.HashSet;
 import java.util.Map;

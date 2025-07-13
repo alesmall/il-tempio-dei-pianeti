@@ -226,6 +226,8 @@ public class Mixer extends Thread {
 
     /**
      * cambia la musica in base alla stanza.
+     * 
+     * @param room la stanza la quale musica bisogna far partire
      */
     public static void changeRoomMusic(String room) {
         changeClip(roomToClipIndex.getOrDefault(room, 0));

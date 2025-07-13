@@ -137,7 +137,7 @@ public class HangmanGame {
         OutputDisplayManager.displayText("> L'intera iscrizione sul totem brilla di una luce accecante! Hai dimostrato la tua saggezza.\n" + PHRASE_TO_GUESS);
         
         DatabaseConnection.printFromDB("osserva", "Terra", "correct", "0", "0");
-        UserInputFlow.Event = 0; 
+        UserInputFlow.event = 0; 
 
         Game game = Game.getInstance();
         game.setRoomState("Terra", "correct");
@@ -154,7 +154,7 @@ public class HangmanGame {
     private void handleLoss() {
         isGameOver = true;
         OutputDisplayManager.displayText("> L'ultimo glifo del fallimento si completa. Le lettere luminose sul totem si spengono una ad una, lasciandoti nell'oscurità. Hai fallito. (osserva di nuovo il totem per riprovare...)");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
         DatabaseConnection.printFromDB("osserva", "Terra", "wrong", "0", "0");
 
         Game game = Game.getInstance();

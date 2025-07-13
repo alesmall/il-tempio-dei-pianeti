@@ -93,7 +93,7 @@ public class TriviaGame {
         }
         // se tutti i tentativi falliscono (es. il computer non ha internet, o il sito dell'API è temporaneamente irraggiungibile)
         OutputDisplayManager.displayText("> Una voce incorporea sussurra nella tua mente...\n“The cosmic winds are troubled. The ancient knowledge cannot reach me now. Return when the ether is calm.”");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
     }
 
     /**
@@ -173,7 +173,7 @@ public class TriviaGame {
         Game.getInstance().setRoomState("Urano", "wrong");
         OutputDisplayManager.displayText("> Un'ondata di delusione proveniente dalla voce ti pervade.\n“You falter. The illusion holds. We must begin anew.” (osserva di nuovo la stanza per riprovare...)");
         DatabaseConnection.printFromDB("osserva", "Urano", "wrong", "0", "0");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
     }
     
     /**
@@ -193,7 +193,7 @@ public class TriviaGame {
         letteraUrano.setPickable(true);
         
         DatabaseConnection.printFromDB("osserva", "Urano", "correct", "0", "0");
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
     }
 
     /**

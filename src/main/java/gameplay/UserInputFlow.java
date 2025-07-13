@@ -20,7 +20,11 @@ import java.util.List;
  */
 public class UserInputFlow {
 
-    public static int Event;
+    /**
+     * event è l'identificatore dell'evento attuale, usato per gestire il flusso logico del gioco.
+     * può essere modificato per cambiare il comportamento degli eventi successivi.
+     */
+    public static int event;
     private static Parser parser;
     private static CommandExecutor commandExecutor;
     private static WordleGUI wordleGUI;
@@ -38,7 +42,7 @@ public class UserInputFlow {
     public static void gameFlow(final String text) {
         OutputDisplayManager.displayText(text);
 
-        switch (Event) { 
+        switch (event) { 
             case 0:
                 parserFlow(text);
                 break;
@@ -106,7 +110,7 @@ public class UserInputFlow {
             if (text.equalsIgnoreCase("si") || text.equalsIgnoreCase("s") || text.equalsIgnoreCase("y")) {
                 OutputDisplayManager.displayText("> Perfetto! Il cosmo ti stava aspettando, " + Game.getInstance().getNickname() + ".");
                 OutputDisplayManager.displayText("> Il tuo cammino tra i pianeti può cominciare. Guardati intorno: anche il silenzio nasconde segreti.");
-                Event = 0;
+                event = 0;
             } else {
                 OutputDisplayManager.displayText("> Forse è stato un errore del cosmo. Ripeti il tuo nome.");
                 isNameConfirmed = false;
@@ -124,7 +128,7 @@ public class UserInputFlow {
 
         try {
             triviaGame.checkGuess(text);
-            if (Event == 2) triviaGame.getNewQuestion();
+            if (event == 2) triviaGame.getNewQuestion();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -153,14 +157,14 @@ public class UserInputFlow {
             cristalloMercurio.setPickable(true);
             Item letteraMercurio = (Item) gameManager.getItemFromName("LetteraMercurio");
             letteraMercurio.setPickable(true);
-            UserInputFlow.Event = 0;
+            UserInputFlow.event = 0;
         } else {
             DatabaseConnection.printFromDB("osserva", "Mercurio", "wrong", "0", "0");
             OutputDisplayManager.displayText("> (osserva di nuovo la stanza per riprovare...)");
             starsGuessed = false;
             Game game = Game.getInstance();
             game.getCurrentRoom().setState("wrong");
-            UserInputFlow.Event = 0;
+            UserInputFlow.event = 0;
         }
     }
 
@@ -215,7 +219,7 @@ public class UserInputFlow {
             Game game = Game.getInstance();
             game.getCurrentRoom().setState("wrong");
         }
-        UserInputFlow.Event = 0;
+        UserInputFlow.event = 0;
     }
 
     /** 
@@ -247,9 +251,11 @@ public class UserInputFlow {
 
     /**
      * imposta il flusso di gioco per una nuova partita.
+     * 
+     * @param game l'istanza della nuova partita
      */
     public static void setUpGameFlow(final Game game) {
-        Event = 1;
+        event = 1;
         DatabaseConnection.printFromDB("0", "Sole", "start", "0", "0"); 
         isNameConfirmed = false;
         isGameOver = false;
@@ -261,9 +267,11 @@ public class UserInputFlow {
 
     /**
      * imposta il flusso di gioco per una partita già caricata.
+     * 
+     * @param game l'istanza della partita salvata
      */
     public static void setUpLoadedGameFlow(final Game game) {
-        Event = 0;
+        event = 0;
         isNameConfirmed = true;
         isGameOver = false;
         parser = new Parser();

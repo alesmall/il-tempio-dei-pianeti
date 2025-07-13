@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * classe che estisce le richieste per il gioco, servendo la pagina web
+ * classe che gestisce le richieste per il gioco, servendo la pagina web
  * e gestendo il salvataggio dei punteggi.
  */
 public class DatabaseHandler extends HttpHandler {
