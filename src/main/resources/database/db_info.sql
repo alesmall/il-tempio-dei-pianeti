@@ -82,7 +82,7 @@ INSERT INTO DESCRIZIONI (ID, COMANDO, STANZA, STATO, ITEM1, ITEM2, DESCRIZIONE) 
     (51, 'usa', 'Venere', 'start', 'Mascherina', '0', '> Leghi la mascherina al volto e avanzi verso il cristallo a passo svelto. Accanto c''è una lettera.'),
     (52, 'osserva', '0', '0', 'LetteraVenere', '0', '> “I cieli di Venere bruciavano ancora quando le nubi smisero di muoversi. Le ultime colonie orbitali registrarono solo silenzio, poi si spensero una a una. Qualcosa aveva interrotto l''armonia celeste. Qualcosa che nessuna macchina poteva riparare DEL tutto.”'),
     
-    (53, '0', 'StanzaGSN', 'start', '0', '0', '> Ti trovi in davanti ad una scelta tra tre strade. Dove vuoi andare?'),
+    (53, '0', 'StanzaGSN', 'start', '0', '0', '> Ti trovi davanti ad una scelta tra tre strade. Dove vuoi andare?'),
     (54, 'osserva', 'StanzaGSN', 'start', '0', '0', '> Un''astronauta deve essere stato qui prima di te. Per terra giacciono un casco spaziale e tre sacchetti di cibo essicato: grano, carne e frutta.'),
     (55, 'osserva', '0', '0', 'Grano', '0', '> Dei semplici chicchi di grano essiccati.'),
     (56, 'osserva', '0', '0', 'Carne', '0', '> Delle strisce di carne essiccata.'),
@@ -112,7 +112,7 @@ INSERT INTO DESCRIZIONI (ID, COMANDO, STANZA, STATO, ITEM1, ITEM2, DESCRIZIONE) 
     (77, '0', 'Nettuno', 'done', '0', '0', '> Ti trovi nella stanza di Nettuno, una caverna subacquea artificiale, immersa in luce blu scura.'),
     (78, 'osserva', 'Nettuno', 'start', '0', '0', '> Il Cristallo è protetto da una creatura acquatica misteriosa. Occorre indovinare la parola corretta per ottenere la sua fiducia.'),
     (79, 'osserva', 'Nettuno', 'correct', '0', '0', '> Hai indovinato! La creatura si avvicina : “Sei degno di possedere il cristallo di Nettuno, Ultimo Viaggiatore. Il destino dell''Universo è nelle tue mani”. Ti porge il cristallo e una lettera. Prendili.'),
-    (80, 'osserva', 'Nettuno', 'wrong', '0', '0', '> Non hai indovinato la parola, quindi non puoi accedere al cristallo. L''universo ne subirà le conseguenze se ti impegni...'),
+    (80, 'osserva', 'Nettuno', 'wrong', '0', '0', '> Non hai indovinato la parola, quindi non puoi accedere al cristallo. L''universo ne subirà le conseguenze se non ti impegni...'),
     (81, 'osserva', 'Nettuno', 'done', '0', '0', '> Hai già raccolto il cristallo di questa stanza! Adesso qui non c''è più niente di utile.'),
     (82, 'osserva', '0', '0', 'LetteraNettuno', '0', '> “Nell''ombra blu di Nettuno si formò l''ultima verità. Fu lì che si comprese: non si trattava di salvare i pianeti, ma di ricordare ciò che li teneva uniti. Era necessario risanare la memoria DIMENTICATA.”'),
     

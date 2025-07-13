@@ -253,9 +253,7 @@ public class UserInputFlow {
         DatabaseConnection.printFromDB("0", "Sole", "start", "0", "0"); 
         isNameConfirmed = false;
         isGameOver = false;
-        // TODO non so se serve new Thread(() -> wordleGame = new WordleGame()).start(); // avvia il gioco wordle in un thread separato, per evitare che il gioco si "congeli" in attesa della risposta dall'API (che potrebbe essere lenta o non funzionare).
-        // il gioco principale continua a funzionare fluidamente, e quando il Wordle sarà pronto, la variabile wordleGame verrà valorizzata in background.
-        triviaGame = TriviaGame.getInstance(); // prepara il mini-gioco dei Trivia. Ottiene l'istanza del gioco e ne resetta il punteggio
+        triviaGame = TriviaGame.getInstance(); // prepara il mini-gioco del trivia. ottiene l'istanza del gioco e ne resetta il punteggio
         triviaGame.resetCorrectAnswers();
         parser = new Parser();
         commandExecutor = new CommandExecutor(game);
@@ -268,9 +266,6 @@ public class UserInputFlow {
         Event = 0;
         isNameConfirmed = true;
         isGameOver = false;
-        // TODO non so se serve new Thread(() -> wordleGame = new WordleGame()).start();
-        triviaGame = TriviaGame.getInstance(); // TODO: forse è da memorizzare il completamento dei minigiochi, per non ricaricarli inutilmente
-        triviaGame.resetCorrectAnswers();
         parser = new Parser();
         commandExecutor = new CommandExecutor(game);
         List<String> itemsNames = game.getInventory().stream().map(Item::getName).toList();

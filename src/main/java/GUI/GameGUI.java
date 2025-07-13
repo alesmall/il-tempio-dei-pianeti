@@ -48,7 +48,7 @@ public class GameGUI extends JPanel {
     private static final Color COLORE_SFONDO_TOOLBAR = new Color(30, 50, 110);     
     private static final Color COLORE_SFONDO_TOOLBAR_HOVER = new Color(35, 50, 105); 
     private static final Font FONT_TESTO_GIOCO = new Font("Dialog", Font.PLAIN, 13);
-    private static final Font FONT_INVENTARIO = new Font("DialogInput", Font.PLAIN, 15); // TODO forse meglio dialog?
+    private static final Font FONT_INVENTARIO = new Font("Dialog", Font.PLAIN, 15); // forse meglio dialoginput?
     private static final Font FONT_TOOLBAR = new Font("Dialog", Font.BOLD, 15);
 
 
@@ -272,7 +272,7 @@ public class GameGUI extends JPanel {
         }
 
         // aggiunta dei pannelli dei mini-giochi
-        panel.add(new WordleGUI(), "Wordle"); // TODO non avevo fatto già partire wordle su un thread? nel manager
+        panel.add(new WordleGUI(), "Wordle"); // oltre alle varie stanze c'è anche un pannello per il minigioco del wordle
 
         return panel;
     }
@@ -400,11 +400,6 @@ public class GameGUI extends JPanel {
         inventoryTextArea.setText("Inventario:\n");
         Mixer.changeRoomMusic("Menu");
     }
-
-    /**
-     * resetta i minigiochi. TODO serve farlo?? o tutti i minigiochi creano una nuova istanza? capiamo
-     * questo metodo viene chiamato quando si torna al menu principale o si inizia una nuova partita.
-     */
 
     // metodi statici per l'aggiornamento della UI dall'esterno
 

@@ -292,10 +292,10 @@ public class DatabaseHandler extends HttpHandler {
                             <p>Per muoverti e interagire nel Tempio dei Pianeti, usa i seguenti comandi testuali:</p>
                             <h3>Comandi di Movimento</h3>
                             <p style="text-align: center;">
-                                <span style="display:inline-block; width: 11em;"> ↑ <b>nord</b> / <b>N</b> </span>
-                                <span style="display:inline-block; width: 11em;"> ↓ <b>sud</b> / <b>S</b> </span>
-                                <span style="display:inline-block; width: 11em;"> → <b>est</b> / <b>E</b> </span>
-                                <span style="display:inline-block; width: 11em;"> ← <b>ovest</b> / <b>O</b> </span>
+                                <span style="display:inline-block; width: 11em;"> ↑ <b>nord</b> </span>
+                                <span style="display:inline-block; width: 11em;"> ↓ <b>sud</b> </span>
+                                <span style="display:inline-block; width: 11em;"> → <b>est</b> </span>
+                                <span style="display:inline-block; width: 11em;"> ← <b>ovest</b> </span>
                             </p>
                             <h3>Comandi di Gioco</h3>
                             <p>

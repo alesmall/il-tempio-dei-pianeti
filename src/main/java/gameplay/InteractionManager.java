@@ -181,6 +181,13 @@ public class InteractionManager {
             letteraMarte.setPickable(true);
             return true;
         }
+        if (i1.hasName("Bastone") && i2.hasName("Lama")) {
+            game.removeInventory(i1);
+            game.removeInventory(i2);
+            game.addInventory((Item) gameManager.getItemFromName("BastoneAffilato"));
+            DatabaseConnection.printFromDB("unisci", "0", "0", i1.getName(), i2.getName());
+            return true;
+        }
         if (i1.hasName("BraccialeVuoto") && i2.hasName("Nucleo")) {
             UserInputFlow.Event = 7; // oblio totale
             Mixer.playEffect("leaving");

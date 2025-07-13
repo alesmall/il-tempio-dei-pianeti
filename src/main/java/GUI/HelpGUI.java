@@ -65,10 +65,10 @@ public class HelpGUI extends JFrame {
                     
                     <h3>Comandi di Movimento:</h3>
                     <p>
-                        ↑ <b>nord</b> / <b>N</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        ↓ <b>sud</b> / <b>S</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        → <b>est</b> / <b>E</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        ← <b>ovest</b> / <b>O</b> <br>
+                        ↑ <b>nord</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ↓ <b>sud</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        → <b>est</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ← <b>ovest</b> <br>
                     </p>
 
                     <h3>Comandi di Gioco:</h3>

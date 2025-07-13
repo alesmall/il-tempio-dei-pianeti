@@ -85,28 +85,28 @@ public class GameManager {
         availableCommands.add(
             new Command(
             "nord",
-            List.of("n", "north", "avanti", "su", "vaiAvanti", "vaiANord"),
+            List.of("n", "north", "avanti", "su", "vaiAvanti", "vaiANord", "sopra"),
             CommandType.NORD
             )
         );
         availableCommands.add(
             new Command(
             "sud",
-            List.of("s", "south", "indietro", "giù", "giu", "vaiIndietro", "vaiASud"),
+            List.of("s", "south", "indietro", "giù", "giu", "vaiIndietro", "vaiASud", "sotto"),
             CommandType.SUD
             )
         );
         availableCommands.add(
             new Command(
             "est",
-            List.of("e", "east", "destra", "vaiDestra", "vaiADestra", "vaiAEst", "vaiAdEst"),
+            List.of("east", "destra", "vaiDestra", "vaiADestra", "vaiAEst", "vaiAdEst"), // 'e' non funzionerebbe perché è nella lista delle stopwords
             CommandType.EST
             )
         );
         availableCommands.add(
             new Command(
             "ovest",
-            List.of("o", "west", "sinistra", "vaiSinistra", "vaiASinistra", "vaiAOvest", "vaiAdOvest"),
+            List.of("west", "sinistra", "vaiSinistra", "vaiASinistra", "vaiAOvest", "vaiAdOvest"), // 'o' non funzionerebbe perché è nella lista delle stopwords
             CommandType.OVEST
             )
         );

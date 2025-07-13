@@ -14,7 +14,6 @@ import java.awt.GridBagLayout;
 /**
  * classe che gestisce la GUI per il mini-gioco Wordle.
  * contiene la griglia 5x5 e gestisce l'interazione con la logica di gioco contenuta in WordleGame.
- * TODO: devo capire se ha senso l'inizializzazione nel resto del codice
  */
 public class WordleGUI extends JPanel {
     

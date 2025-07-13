@@ -80,7 +80,7 @@ public class CommandExecutor {
                     GameManager gameManager = new GameManager();
                     Set<Command> commands = gameManager.getAllCommands();
                     commands.forEach(c -> OutputDisplayManager.displayText(">  - " + c.getName()));
-                    OutputDisplayManager.displayText("> (hint: per ulteriori informazioni clicca sul punto interrogativo in alto)"); 
+                    OutputDisplayManager.displayText("> (per ulteriori informazioni utilizza la guida in alto)"); 
                 }
         );
 
