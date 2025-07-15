@@ -102,7 +102,7 @@ public class DatabaseConnection {
     }
 
     /**
-     * restituisce la query SQL per ottenere la classifica ordinata per tempo.
+     * restituisce la query SQL per ottenere la classifica ordinata per finale e per tempo.
      *
      * @return la stringa della query SQL
      */

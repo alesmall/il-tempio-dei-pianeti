@@ -43,7 +43,7 @@ public class HelpGUI extends JFrame {
     private void initComponents() {
         // impostazioni della finestra (JFrame) 
         setTitle("Manuale dell'Esploratore");
-        setPreferredSize(new Dimension(550, 455));
+        setPreferredSize(new Dimension(550, 485));
         setResizable(false);
         getContentPane().setBackground(COLORE_SFONDO);
         setIconImage(new ImageIcon("src/main/resources/img/icon.png").getImage());

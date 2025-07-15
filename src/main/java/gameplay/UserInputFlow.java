@@ -153,9 +153,9 @@ public class UserInputFlow {
             Game game = Game.getInstance();
             GameManager gameManager = new GameManager();
             game.getCurrentRoom().setState("correct");
-            Item cristalloMercurio = (Item) gameManager.getItemFromName("CristalloMercurio");
+            Item cristalloMercurio = gameManager.getItemFromName("CristalloMercurio");
             cristalloMercurio.setPickable(true);
-            Item letteraMercurio = (Item) gameManager.getItemFromName("LetteraMercurio");
+            Item letteraMercurio = gameManager.getItemFromName("LetteraMercurio");
             letteraMercurio.setPickable(true);
             UserInputFlow.event = 0;
         } else {
@@ -209,9 +209,9 @@ public class UserInputFlow {
             Game game = Game.getInstance();
             GameManager gameManager = new GameManager();
             game.getCurrentRoom().setState("correct");
-            Item cristalloLuna = (Item) gameManager.getItemFromName("CristalloLuna");
+            Item cristalloLuna = gameManager.getItemFromName("CristalloLuna");
             cristalloLuna.setPickable(true);
-            Item letteraLuna = (Item) gameManager.getItemFromName("LetteraLuna");
+            Item letteraLuna = gameManager.getItemFromName("LetteraLuna");
             letteraLuna.setPickable(true);
         } else {
             DatabaseConnection.printFromDB("osserva", "Luna", "wrong", "0", "0");

@@ -131,9 +131,9 @@ public class InteractionManager {
     public boolean executeUseSingleItem(Item i) { 
         if (i.hasName("Mascherina") && game.getCurrentRoom().getName().equals("Venere")) {
             game.removeInventory(i);
-            Item cristalloVenere = (Item) gameManager.getItemFromName("CristalloVenere");
+            Item cristalloVenere = gameManager.getItemFromName("CristalloVenere");
             cristalloVenere.setPickable(true);
-            Item letteraVenere = (Item) gameManager.getItemFromName("LetteraVenere");
+            Item letteraVenere = gameManager.getItemFromName("LetteraVenere");
             letteraVenere.setPickable(true);
             return true;
         }
@@ -144,18 +144,18 @@ public class InteractionManager {
         }
         if (i.hasName("Grano") && game.getCurrentRoom().getName().equals("Giove")) {
             game.removeInventory(i);
-            Item cristalloGiove = (Item) gameManager.getItemFromName("CristalloGiove");
+            Item cristalloGiove = gameManager.getItemFromName("CristalloGiove");
             cristalloGiove.setPickable(true);
-            Item letteraGiove = (Item) gameManager.getItemFromName("LetteraGiove");
+            Item letteraGiove = gameManager.getItemFromName("LetteraGiove");
             letteraGiove.setPickable(true);
             return true;
         }
 
         if (i.hasName("Specchio") && game.getCurrentRoom().getName().equals("Saturno")) {
             game.removeInventory(i);
-            Item cristalloSaturno = (Item) gameManager.getItemFromName("CristalloSaturno");
+            Item cristalloSaturno = gameManager.getItemFromName("CristalloSaturno");
             cristalloSaturno.setPickable(true);
-            Item letteraSaturno = (Item) gameManager.getItemFromName("LetteraSaturno");
+            Item letteraSaturno = gameManager.getItemFromName("LetteraSaturno");
             letteraSaturno.setPickable(true);
             return true;
         }
@@ -174,17 +174,17 @@ public class InteractionManager {
     public boolean executeUseCombination(Item i1, Item i2) { 
         if (i1.hasName("BastoneAffilato") && i2.hasName("Portone")) {
             game.removeInventory(i1);
-            Item cristalloMarte = (Item) gameManager.getItemFromName("CristalloMarte");
+            Item cristalloMarte = gameManager.getItemFromName("CristalloMarte");
             cristalloMarte.setPickable(true);
-            Item letteraMarte = (Item) gameManager.getItemFromName("LetteraMarte");
+            Item letteraMarte = gameManager.getItemFromName("LetteraMarte");
             letteraMarte.setPickable(true);
             return true;
         }
-        if (i1.hasName("Bastone") && i2.hasName("Lama")) {
+        if (i1.hasName("Lama") && i2.hasName("Bastone")) {
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BastoneAffilato"));
-            DatabaseConnection.printFromDB("unisci", "0", "0", i1.getName(), i2.getName());
+            game.addInventory(gameManager.getItemFromName("BastoneAffilato"));
+            DatabaseConnection.printFromDB("unisci", "0", "0", i1.getName(), i2.getName()); // è sia in unisci che in usa perché il comando ha senso per entrambi, ma nel db è previsto solo come unisci
             return true;
         }
         if (i1.hasName("BraccialeVuoto") && i2.hasName("Nucleo")) {
@@ -227,7 +227,7 @@ public class InteractionManager {
         if (areItems(i1,i2,"Bastone", "Lama")) {
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BastoneAffilato"));
+            game.addInventory(gameManager.getItemFromName("BastoneAffilato"));
             DatabaseConnection.printFromDB("unisci", "0", "0", i1.getName(), i2.getName());
             return true;
         }
@@ -235,7 +235,7 @@ public class InteractionManager {
         if (areItems(i1,i2,"Panno", "Corda")) {
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("Mascherina"));
+            game.addInventory(gameManager.getItemFromName("Mascherina"));
             DatabaseConnection.printFromDB("unisci", "0", "0", i1.getName(), i2.getName());
             return true;
         }
@@ -244,7 +244,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeLucente"));
+            game.addInventory(gameManager.getItemFromName("BraccialeLucente"));
             OutputDisplayManager.displayText("> Il tuo bracciale vuoto è diventato un bracciale lucente (1)! È un primo passo, continua così :)");
             return true;
         }
@@ -252,7 +252,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeIntarsiato"));
+            game.addInventory(gameManager.getItemFromName("BraccialeIntarsiato"));
             OutputDisplayManager.displayText("> Il tuo bracciale lucente è diventato un bracciale intarsiato (2)! Ottimo lavoro, continua così :)");
             return true;
         }
@@ -260,7 +260,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeArmonico"));
+            game.addInventory(gameManager.getItemFromName("BraccialeArmonico"));
             OutputDisplayManager.displayText("> Il tuo bracciale intarsiato è diventato un bracciale armonico (3)! Ottimo lavoro, continua così :)");
             return true;
         }
@@ -268,7 +268,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeRisonante"));
+            game.addInventory(gameManager.getItemFromName("BraccialeRisonante"));
             OutputDisplayManager.displayText("> Il tuo bracciale armonico è diventato un bracciale risonante (4)! Ottimo lavoro, continua così :)");
             return true;
         }
@@ -276,7 +276,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeIncantato"));
+            game.addInventory(gameManager.getItemFromName("BraccialeIncantato"));
             OutputDisplayManager.displayText("> Il tuo bracciale risonante è diventato un bracciale incantato (5)! Ottimo lavoro, continua così :)");
             return true;
         }
@@ -284,7 +284,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeSplendente"));
+            game.addInventory(gameManager.getItemFromName("BraccialeSplendente"));
             OutputDisplayManager.displayText("> Il tuo bracciale incantato è diventato un bracciale splendente (6)! Ci sei quasi, continua così :)");
             return true;
         }
@@ -292,7 +292,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeCeleste"));
+            game.addInventory(gameManager.getItemFromName("BraccialeCeleste"));
             OutputDisplayManager.displayText("> Il tuo bracciale splendente è diventato un bracciale celeste (7)! Ci sei quasi, continua così :)");
             return true;
         }
@@ -300,7 +300,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeStellare"));
+            game.addInventory(gameManager.getItemFromName("BraccialeStellare"));
             game.unlockCorridor("Terra", "Luna");
             OutputDisplayManager.displayText("> Il tuo bracciale celeste è diventato un bracciale stellare (8)! La missione potrebbe terminare qui, consegnando il bracciale al Nucleo, ma forse ci sono ancora segreti da scoprire... :)");
             return true;
@@ -309,7 +309,7 @@ public class InteractionManager {
             Mixer.playEffect("binding");
             game.removeInventory(i1);
             game.removeInventory(i2);
-            game.addInventory((Item) gameManager.getItemFromName("BraccialeLunare"));
+            game.addInventory(gameManager.getItemFromName("BraccialeLunare"));
             OutputDisplayManager.displayText("> Il tuo bracciale stellare è diventato un bracciale lunare! Il bracciale è ora completo, non ti resta che consegnarlo al Nucleo :)");
             return true;
         }
