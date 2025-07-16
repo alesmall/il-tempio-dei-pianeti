@@ -567,7 +567,7 @@ public static Connection connect() {
 
 Il metodo **connect** si occupa di aprire la connessione al database, creare le tabelle necessarie e controllare se sono vuote. Quando richiesto, inserisce i dati di default nelle tabelle e restituisce la connessione attiva.
 
-Altri metodi chiave includono **close**, **printFromDB** e **getDescriptionFromDatabase**, che rispettivamente permettono di chiudere la connessione, aggiungere dati al database, mostrare i dati salvati, ottenere la classifica dei giocatori e recuperare le descrizioni delle stanze. Procediamo ad esaminarli nel dettaglio:
+Altri metodi chiave includono **close**, **printFromDB** e **getDescriptionFromDB**, che rispettivamente permettono di chiudere la connessione, aggiungere dati al database, mostrare i dati salvati, ottenere la classifica dei giocatori e recuperare le descrizioni delle stanze. Procediamo ad esaminarli nel dettaglio:
 ```java
 /**
  * chiude la connessione al database.
@@ -629,7 +629,7 @@ public static String getDescriptionFromDB(Connection conn, String sql_query) {
 ```
 Il metodo **printFromDB** ha il compito di stampare la descrizione della stanza attuale, recuperandola dal database in base ai parametri forniti.
 
-Il metodo **getDescriptionFromDatabase**, invece, esegue una query SQL ricevuta come parametro e restituisce la descrizione corrispondente alla stanza corrente.
+Il metodo **getDescriptionFromDB**, invece, esegue una query SQL ricevuta come parametro e restituisce la descrizione corrispondente alla stanza corrente.
 
 In sintesi, l'impiego del database ci ha offerto una soluzione pratica ed efficace per salvare e recuperare i dialoghi del gioco, oltre a gestire la classifica relativa ai tempi di gioco.
 
@@ -816,14 +816,14 @@ public class Parser {
 ```
 Nel processo di parsing dell’input dell’utente, sono state utilizzate **lambda expressions** per rendere il codice più compatto e funzionale. In particolare, due lambda svolgono un ruolo centrale:
 
-- **Prima lambda expression:** per la creazione di List<String> words
+- **Prima lambda expression:** per la creazione di List< String > words  
   Questa lambda prende la stringa inserita dall’utente e la:
   1. Suddivide in un array di parole (`split`),
   2. Converte ogni parola in minuscolo (`lowercase`),
   3. Filtra le parole non significative (le cosiddette **stop words**),
   4. Restituisce il risultato come lista di stringhe filtrata.
 
-- **Seconda lambda expression:** per le funzioni findCommand e findItem
+- **Seconda lambda expression:** per le funzioni findCommand e findItem  
   Questa lambda viene utilizzata per confrontare l’input con il **nome** o i **nomi alternativi (alias)** associati a un determinato oggetto o comando. Se viene trovata una corrispondenza (case-insensitive), il risultato corrispondente viene impostato nel `ParserOutput`.
 
 #### Conversione tra JSON e Oggetti Java tramite Lambda Expressions
@@ -1017,10 +1017,10 @@ La classe `ManagerGUI` è il punto centrale della gestione grafica del nostro gi
   - I vari `JPanel` che compongono la GUI del gioco
 - I `JPanel` vengono aggiunti a un **`CardLayout`**, che consente di navigare tra le diverse schermate in modo **fluido** e **intuitivo**.
 
-#### Il Menu Principale
+#### Il Menù Principale
 All'avvio dell'applicazione, la prima schermata visibile è il **menu principale**. Questo è gestito dalla classe `MenuGUI`, che estende `JPanel` e contiene tutti i componenti interattivi della schermata iniziale.
 
-Il menu fornisce pulsanti per le seguenti azioni:
+Il menù fornisce pulsanti per le seguenti azioni:
 - **avviare una nuova partita**
 - **caricare una partita salvata**
 - **visualizzare i crediti**
@@ -1072,7 +1072,7 @@ public class MenuGUI extends JPanel {
 La classe `MenuGUI` rappresenta il **menu iniziale** dell’applicazione, ovvero la prima schermata visibile all’avvio del gioco. Estende `JPanel` ed è progettata per interagire perfettamente con il `CardLayout` di `ManagerGUI`.
 
 All'interno della classe troviamo:
-- **`backgroundPanel`**: un pannello dedicato al disegno dello sfondo grafico del menu, solitamente un'immagine personalizzata.
+- **`backgroundPanel`**: un pannello dedicato al disegno dello sfondo grafico del menu, un'immagine personalizzata.
 - **Pulsanti principali**:
   - `newGame`: avvia una nuova partita
   - `loadGame`: carica una partita salvata
@@ -1093,7 +1093,7 @@ Quando l’utente clicca su:
 - **"nuova partita"**
 - **"carica partita"**
   
-il menu attiva la schermata successiva nel `CardLayout`, ovvero il pannello della **ProgressBar**.
+il menù attiva la schermata successiva nel `CardLayout`, ovvero il pannello della **ProgressBar**.
 
 <p align="center">
 <img src="img/progressbar.png" alt="progressbar" width="70%">
@@ -1203,6 +1203,9 @@ public class GameGUI extends JPanel {
 ```
 Come per `MenuGUI`, anche `GameGUI` funge da pannello principale del gioco, includendo vari pulsanti, ciascuno con i propri `ActionListener` per gestire i clic.
 Il processo di caricamento di una partita salvata è simile a quello di una nuova partita, con la differenza che i dati vengono caricati da un file di salvataggio.
+
+#### Riconoscimenti e Manuale
+
 Cliccando sul pulsante **"Riconoscimenti"**, viene mostrata una schermata dedicata ai nomi dei membri del team di sviluppo, come illustrato di seguito:
 
 <p align="center">
@@ -1231,7 +1234,7 @@ public class CreditsGUI extends JPanel {
 
     // ...
 ```
-Il menu principale del gioco include un pulsante **?** che, quando premuto, apre una finestra di dialogo con le istruzioni per il gioco, come illustrato di seguito:
+Il menù principale del gioco include un pulsante **?** che, quando premuto, apre una finestra di dialogo con le istruzioni per il gioco, come illustrato di seguito:
 <p align="center">
 <img src="img/schermata_help.png" alt="help" width="70%">
 </p>
@@ -1453,7 +1456,7 @@ Nel nostro progetto, server e client risiedono sulla **stessa macchina**, quindi
 
 ### Utilizzo dei Socket nel Progetto
 
-Nel menu principale del nostro gioco è presente un pulsante con l’icona **"🌐"**, che, se cliccato, apre una **pagina web** contenente:
+Nel menù principale del nostro gioco è presente un pulsante con l’icona **"🌐"**, che, se cliccato, apre una **pagina web** contenente:
 
 - Le informazioni generali sul gioco  
 - Le istruzioni per giocare  
@@ -1465,7 +1468,7 @@ Questa funzionalità è stata implementata utilizzando un **socket sulla porta 1
 Il sito web fornisce: una panoramica del gioco e dei suoi obiettivi; le regole principali per giocare correttamente; informazioni utili all’utente, come controlli e suggerimenti; crediti e riferimenti.
 
 <p align="center">
-<img src="img/sito.png" alt="sito" width="70%">
+<img src="img/sito.png" alt="sito" width="85%">
 </p>
 
 Il sito web associato al nostro gioco è stato progettato per fornire tutte le informazioni essenziali in modo chiaro e facilmente navigabile. Le sezioni principali includono:
@@ -1474,7 +1477,7 @@ Il sito web associato al nostro gioco è stato progettato per fornire tutte le i
   Il nome ufficiale del progetto: **"Il Tempio dei Pianeti"**.
 
 - **Indice Linkato**  
-  Un menu di navigazione interno che consente di saltare rapidamente alle varie sezioni della pagina.
+  Un menù di navigazione interno che consente di saltare rapidamente alle varie sezioni della pagina.
 
 - **Missione**  
   La descrizione generale del progetto e della trama dell'avventura.
@@ -1499,7 +1502,7 @@ Nel dettaglio, il socket:
 
 - Rimane in ascolto sulla porta definita
 - Risponde alle richieste HTTP in arrivo
-- Fornisce in risposta il contenuto della pagina web (solitamente un file `.html`)
+- Fornisce in risposta il contenuto della pagina web (un file `.html`)
   
 ```java
 /**
@@ -1566,7 +1569,7 @@ private void handleGet(final Request request, final Response response) throws IO
     out.write(String.format(htmlTemplate, classificaRows.toString()));
 }
 ```
-Il metodo `handleGet()` si occupa di processare le richieste HTTP di tipo **GET** ricevute sulla porta 8080. I passaggi principali sono:
+Il metodo `handleGet()` si occupa di processare le richieste HTTP di tipo **GET** ricevute sulla porta 1111. I passaggi principali sono:
 
 - Impostazione del **content type** della risposta come `"text/html"`.
 - Utilizzo di un oggetto `Writer` per generare dinamicamente il contenuto HTML della pagina web.
@@ -1597,6 +1600,7 @@ Questa architettura è progettata per facilitare la comunicazione client-server,
 - **POST**: invia nuovi dati al server (ad esempio, per creare una nuova risorsa).
 - **PUT**: aggiorna dati esistenti su una risorsa.
 - **DELETE**: rimuove una risorsa dal server.
+
 REST in Java è comunemente usato nella realizzazione di **API** che offrono un’interfaccia semplice, stateless e accessibile via web.
 
 ### Utilizzo di REST nel Progetto
@@ -1898,6 +1902,7 @@ public class DatabaseHandler extends HttpHandler {
 La classe `DatabaseHandler`, che estende `HttpHandler`, è incaricata di gestire le richieste HTTP in arrivo sull’endpoint `/api/data`, adattando il comportamento in base al tipo di richiesta:
 - **Per richieste GET**, viene eseguito il metodo `handleGet`, il quale interroga il database e restituisce i risultati da visualizzare sul sito.
 - **Per richieste POST**, viene invocato il metodo `handlePost`, che inserisce nel database i dati ricevuti dalla richiesta.
+
 Per eseguire correttamente una richiesta POST, è necessario un client HTTP. Nel nostro progetto, questo ruolo è ricoperto dalla classe `Client`, progettata come descritto di seguito:
 
 ```java

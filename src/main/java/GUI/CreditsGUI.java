@@ -108,7 +108,7 @@ public class CreditsGUI extends JPanel {
      * @return il JButton "indietro" 
      */
     private JButton createStyledBackButton() {
-        JButton button = new JButton("← Torna al Menu");
+        JButton button = new JButton("← Torna al Menù");
         button.setFont(new Font("Dialog", Font.BOLD, 14));
         button.setForeground(COLORE_TESTO);
         button.setBackground(new Color(25, 35, 80));
