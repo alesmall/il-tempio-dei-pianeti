@@ -204,9 +204,9 @@ Una map è una collection che consente di creare una **associazione chiave-valor
 `Map`, `Key`, `Value`, `Boolean`
 
 #### Operatori:
-`newMap() → Map` : crea una nuova mappa  
+`newMap() → Map` : crea una nuova Map  
 `isEmpty(Map) → Boolean` : restituisce ```true``` se la Map è vuota, ```false``` altrimenti  
-`put(Map, Key, Value) → Map` : inserisce l'elemento ```<Key,Value>``` nella map  
+`put(Map, Key, Value) → Map` : inserisce l'elemento ```<Key,Value>``` nella Map  
 `get(Map, Key) → Value` : restituisce l'oggetto associato alla chiave ```Key```  
 `containsKey(Map, Key) → Boolean` : restituisce ```true``` se la Map contiene la chiave ```Key```, falso altrimenti  
 `containsValue(Map, Value) → Boolean` : restituisce ```true``` se la Map contiene il valore ```Value```  
