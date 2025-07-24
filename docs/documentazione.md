@@ -36,7 +36,7 @@ Il progetto è stato realizzato da:
 per l'esame di Metodi Avanzati di Programmazione (track M-Z, a.a. 2024/2025).
 
 ### Descrizione del Progetto
-"Il Tempio del Pianeti" è nato come progetto finale per il corso di **Metodi Avanzati di Programmazione**, tenuto dal prof. Pierpaolo Basile presso l'Università degli Studi di Bari "Aldo Moro". 
+"Il Tempio dei Pianeti" è nato come progetto finale per il corso di **Metodi Avanzati di Programmazione**, tenuto dal prof. Pierpaolo Basile presso l'Università degli Studi di Bari "Aldo Moro". 
 L'obiettivo era esplorare il paradigma della **programmazione a oggetti** attraverso lo sviluppo di un'avventura testuale interamente in **Java**, arricchita da un'interfaccia grafica per un'esperienza più immersiva.  
 
 Un'avventura testuale è un programma che simula un ambiente nel quale il giocatore deve usare comandi testuali per istruire il personaggio della storia a interagire con l'ambiente circostante.  
@@ -158,7 +158,7 @@ La lista è una struttura dati sequenziale che consente di salvare e accedere a 
 |----------|-------------------------|----------------------------------|
 | `isEmpty(l')` | `true` | `false` |
 | `getItem(l', id')` | `error` | if `id = id'` then `it` else `getItem(l, id')` |
-| `remove(l', id')` | `error` | if `id = id'` then `l` else `add(remove(l, id'), it)` |
+| `remove(l', id')` | `error` | if `id = id'` then `l` else `add(remove(l, id'), it, id)` |
 | `getIndex(l', it')` | `error` | if `it = it'` then `id` else `getIndex(l, it')` |
 | `getLastIndex(l')` | `error` | if `isEmpty(l)` then `1` else `getLastIndex(l) + 1` |
 | `contains(l', it')` | `false` | if `it = it'` then `true` else `contains(l, it')` |
@@ -179,7 +179,7 @@ id, id' : Integer
 - `isEmpty(newList) = true`
 - `isEmpty(add(l, it, id)) = false`
 - `getItem(add(l, it, id), id') = if id = id' then it else getItem(l, id')`
-- `remove(add(l, it, id), id') = if id = id' then l else add(remove(l, id'), it)`
+- `remove(add(l, it, id), id') = if id = id' then l else add(remove(l, id'), it, id)`
 - `getIndex(add(l, it, id), it') = if it = it' then id else getIndex(l, it')`
 - `getLastIndex(add(l, it, id)) = if isEmpty(l) then 1 else getLastIndex(l) + 1`
 - `contains(newList, it') = false`
